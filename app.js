@@ -1,7 +1,3 @@
-let channels = [
-    {name: 'Hardware Support'},
-    {name: 'Software Support'}
-];
 
 class Channel extends React.Component{
     onClick(){
@@ -42,12 +38,10 @@ class ChannelForm extends React.Component{
     onSubmit(e){
         let {channelName} = this.state;
         console.log(channelName);
-        channels.push({
-            name: channelName
-        });
         this.setState({
             channelName: ''
         });
+        this.props.addChannel(channelName);
         e.preventDefault();
     }
     render(){
@@ -63,11 +57,25 @@ class ChannelForm extends React.Component{
 }
 
 class ChannelSection extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            channels: [
+                {name: 'Hardware Support'},
+                {name: 'Software Support'}
+            ]
+        };
+    }
+    addChannel(name){
+        let {channels} = this.state;
+        channels.push({name});
+        this.setState({channels});
+    }
     render(){
         return(
             <div>
-                <ChannelList channels={channels} />
-                <ChannelForm />
+                <ChannelList channels={this.state.channels} />
+                <ChannelForm addChannel={this.addChannel.bind(this)} />
             </div>
         );
     }
