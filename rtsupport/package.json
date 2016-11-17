@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pawlo0/react-golang-rethinkdb/issues"
   },
-  "homepage": "https://github.com/pawlo0/react-golang-rethinkdb#readme"
+  "homepage": "https://github.com/pawlo0/react-golang-rethinkdb#readme",
+  "devDependencies": {
+    "react": "^15.4.0"
+  }
 }
