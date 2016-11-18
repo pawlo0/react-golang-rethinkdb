@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class Channel extends Component{
     onClick(e){
-        e.prevetnDefault();
+        e.preventDefault();
         const {setChannel, channel} = this.props;
         setChannel(channel);    
     }
