@@ -14,9 +14,9 @@ class ChannelSection extends Component{
 }
 
 ChannelSection.propTypes = {
-    channels: React.propTypes.array.isRequired,
-    setChannel: React.propTypes.func.isRequired,
-    addChannel: React.propTypes.func.isRequired    
+    channels: React.PropTypes.array.isRequired,
+    setChannel: React.PropTypes.func.isRequired,
+    addChannel: React.PropTypes.func.isRequired    
 };
 
 export default ChannelSection;
