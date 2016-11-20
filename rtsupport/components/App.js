@@ -9,7 +9,8 @@ class App extends Component{
         this.state = {
             channels: [],
             users: [],
-            messages: []
+            messages: [],
+            activeChannel: {}
         };
     }
     addChannel(name){
@@ -22,28 +23,18 @@ class App extends Component{
         this.setState({activeChannel});
         // to do: Get channels messages
     }
-    addUser(userName){
+    setUserName(name){
         let {users} = this.state;
-        users.push({id:users.length, userName});
+        users.push({id:users.length, name});
         this.setState({users});
-        this.setState({currentUser: userName});
         // to do: send to server
     }
-    addMessage(message){
-        let {messages} = this.state;
-        let author = this.state.currentUser;
-        let channel = this.state.activeChannel;
-        let d = new Date();
-        let timestamp = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " " + d.getDate()  + "-" + (d.getMonth()+1) + "-" + d.getFullYear() + " ";
-        messages.push({
-            id: messages.length,
-            author,
-            channel,
-            timestamp,
-            body: message
-        });
+    addMessage(body){
+        let {messages, users} = this.state;
+        let createdAt = new Date();
+        let author = users.length > 0 ? users[0].name : 'anonymous';
+        messages.push({id: messages.length, body, createdAt, author});
         this.setState(messages);
-        console.log(this.state.messages);
         // to do: send to server
     }
     render(){
@@ -57,20 +48,13 @@ class App extends Component{
                     />
                     <UserSection
                         {...this.state}
-                        addUser={this.addUser.bind(this)}
+                        setUserName={this.setUserName.bind(this)}
                     />
                 </div>
-                <div className='messages-container'>    
-                    <MessageSection
-                        messages={
-                            this.state.messages.filter(message => {
-                                return message.channel === this.state.activeChannel; 
-                            })
-                        }
-                        activeChannel={this.state.activeChannel}
-                        addMessage={this.addMessage.bind(this)}
-                    />
-                </div>
+                <MessageSection
+                    {...this.state}
+                    addMessage={this.addMessage.bind(this)}
+                />
             </div>
         );
     }

@@ -7,10 +7,7 @@ class MessageList extends Component{
             <ul>{
                 this.props.messages.map( message => {
                     return(
-                        <Message
-                            message={message}
-                            key={message.id}
-                        />
+                        <Message key={message.id} message={message} />
                     );
                 })
             }</ul>
@@ -20,7 +17,6 @@ class MessageList extends Component{
 
 MessageList.propTypes = {
     messages: React.PropTypes.array.isRequired,
-    activeChannel: React.PropTypes.object.isRequired
 };
 
 export default MessageList;
