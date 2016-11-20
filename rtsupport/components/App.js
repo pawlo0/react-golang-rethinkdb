@@ -9,7 +9,8 @@ class App extends Component{
         this.state = {
             channels: [],
             users: [],
-            messages: []
+            messages: [],
+            activeChannel: {}
         };
     }
     addChannel(name){
@@ -43,7 +44,6 @@ class App extends Component{
             body: message
         });
         this.setState(messages);
-        console.log(this.state.messages);
         // to do: send to server
     }
     render(){

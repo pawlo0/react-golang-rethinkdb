@@ -26,7 +26,7 @@ class MessageSection extends Component{
 
 MessageSection.propTypes = {
     messages: React.PropTypes.array.isRequired,
-    activeChannel: React.PropTypes.object,
+    activeChannel: React.PropTypes.object.isRequired,
     addMessage: React.PropTypes.func.isRequired
 };
 
