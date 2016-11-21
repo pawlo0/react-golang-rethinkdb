@@ -1,0 +1,26 @@
+{
+  "name": "rtsupport",
+  "version": "1.0.0",
+  "description": "Realtime support frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawlo0/react-golang-rethinkdb.git"
+  },
+  "author": "James Moore <james@knowthen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pawlo0/react-golang-rethinkdb/issues"
+  },
+  "homepage": "https://github.com/pawlo0/react-golang-rethinkdb#readme",
+  "devDependencies": {
+    "react": "^15.4.0"
+  },
+  "dependencies": {
+    "fecha": "^2.3.0",
+    "react-dom": "^15.4.0"
+  }
+}
