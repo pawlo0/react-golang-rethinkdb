@@ -1,24 +1,22 @@
-import React, {Component} from 'react';
-import fecha from 'fecha'; 
+import React, { Component } from 'react';
 
 class Message extends Component{
-    render(){
-        let {message} = this.props;
-        let createdAt = fecha.format(message.createdAt, 'HH:mm:ss MM/DD/YYYY');
-        return(
-            <li className='message'>
-                <div className='author'>
-                    <strong>{message.author}</strong>
-                    <i className='timestamp'>{createdAt}</i>
-                </div>
-                <div className='body'>{message.body}</div>
-            </li>
-        );
-    }
+  render() {
+    const {message} = this.props;
+    return (
+      <li className='message'>
+        <div className='author'>
+          <strong>{message.author}</strong>
+          <i className='timestamp'>{message.createdAt}></i>
+        </div>
+        <div className='body'>{message.body}</div>
+      </li>
+    )
+  }
 }
 
 Message.propTypes = {
-    message: React.PropTypes.object.isRequired
-};
+  message: React.PropTypes.object.isRequired,
+}
 
 export default Message;

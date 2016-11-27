@@ -10,17 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/pawlo0/react-golang-rethinkdb.git"
   },
-  "author": "James Moore <james@knowthen.com>",
+  "author": "james Moore",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pawlo0/react-golang-rethinkdb/issues"
   },
   "homepage": "https://github.com/pawlo0/react-golang-rethinkdb#readme",
-  "devDependencies": {
-    "react": "^15.4.0"
-  },
   "dependencies": {
+    "babel-loader": "^5.3.3",
     "fecha": "^2.3.0",
-    "react-dom": "^15.4.0"
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "webpack": "^1.13.3"
   }
 }
